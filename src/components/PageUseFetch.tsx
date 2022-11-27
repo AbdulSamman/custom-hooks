@@ -1,7 +1,5 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { useFetch } from "../hooks/useFetch";
-
+import { FaSpinner } from "react-icons/fa";
 const productsUrl =
   "https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/products.json";
 const ordersUrl =
@@ -12,7 +10,7 @@ export const PageUseFetch = () => {
   const [orders, loadingOrders, numOfOrders] = useFetch(ordersUrl);
 
   return (
-    <>
+    <div className="pageUseFetch">
       <p>The useFetch Page</p>
       <hr />
       {!loadingProducts ? (
@@ -30,7 +28,10 @@ export const PageUseFetch = () => {
           </div>
         </>
       ) : (
-        <p>Loading products...</p>
+        <div className="loading">
+          <FaSpinner className="spinner" />
+          <p>Loading products...</p>
+        </div>
       )}
       {!loadingOrders ? (
         <>
@@ -47,8 +48,11 @@ export const PageUseFetch = () => {
           </div>
         </>
       ) : (
-        <p>Loading orders...</p>
+        <div className="loading">
+          <FaSpinner className="spinner" />
+          <p>Loading orders...</p>
+        </div>
       )}
-    </>
+    </div>
   );
 };
