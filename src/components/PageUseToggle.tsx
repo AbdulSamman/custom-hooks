@@ -1,10 +1,9 @@
 import { useToggle } from "../hooks/useToggle";
 
 export const PageUseToggle = () => {
-  const [showAds, toggleAds, adsClass] = useToggle(false);
-
-  const [sendMail, toggleMail, mailClass] = useToggle(false);
-
+  const [showAds, toggleAds, adsOff, adsClass] = useToggle(false);
+  const [sendMail, toggleMail, mailsOff, mailClass] = useToggle(false);
+  const [layoutDark, toggleLayout, layoutOff] = useToggle(true);
   return (
     <div className="pageUseToggle">
       <p>The useToggle Page</p>
@@ -29,11 +28,21 @@ export const PageUseToggle = () => {
             {sendMail ? "yes, send md mails" : "no, don't send md mails"}
           </p>
         </div>
-        <div className="row">
-          <div>
-            <button onClick={toggleAds}>Layout: dark</button>
-          </div>
-        </div>
+
+        <p>
+          <button
+            style={{ backgroundColor: layoutDark ? "#444" : "yellow" }}
+            onClick={toggleLayout}
+          >
+            Layout: {layoutDark ? "dark" : "light"}
+          </button>
+        </p>
+
+        <hr />
+      </div>
+      <div className="turnOff">
+        <button onClick={adsOff}>Turn off advertisements</button>
+        <button onClick={mailsOff}>Turn off mails</button>
       </div>
     </div>
   );

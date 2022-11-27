@@ -41,7 +41,7 @@ export const PageUseFetch = () => {
               return (
                 <span key={order.orderID}>
                   {order.orderID}
-                  {numOfOrders - 1 !== i && <span>,</span>}{" "}
+                  {numOfOrders - 1 !== i ? "," : "."}{" "}
                 </span>
               );
             })}

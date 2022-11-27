@@ -46,6 +46,10 @@ div.App {
         }
       }
     }
+    .turnOff {
+      display: flex;
+      column-gap: 1rem;
+    }
   }
   .pageUseFetch {
     .loading {
