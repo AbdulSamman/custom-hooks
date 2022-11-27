@@ -1,0 +1,50 @@
+div.App {
+  background-color: #333;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 0 1rem;
+  .logo {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+
+    a {
+      img {
+        width: 60px;
+      }
+    }
+    h1 {
+      color: goldenrod;
+    }
+  }
+  nav {
+    background-color: #222;
+    padding: 0.5rem;
+    a {
+      color: #aaa;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    a:focus {
+      color: rgb(211, 211, 110);
+    }
+  }
+  .pageUseToggle {
+    .rows {
+      .row {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+        .positive {
+          color: green;
+        }
+        .negative {
+          color: red;
+        }
+        button {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
